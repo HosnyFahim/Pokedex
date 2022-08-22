@@ -1,0 +1,30 @@
+@media (max-width: 1275px) {
+    #allPokemon {
+        margin-top: 16%;
+    }
+}
+
+@media (max-width: 1210px) {
+    #allPokemon {
+        margin-top: 17%;
+    }
+}
+
+@media (max-width: 1120px) {
+    #allPokemon {
+        margin-top: 18%;
+    }
+}
+
+@media (max-width: 1108px) {
+    #allPokemon {
+        margin-top: 19%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .header {
+        flex-direction: unset;
+        justify-content: space-between;
+    }
+}
