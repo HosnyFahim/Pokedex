@@ -1,9 +1,8 @@
 let currentPokemon;
-
 let fetchedPokemons = [];
 
 
-//**JSON colors for types of Pokemons */
+//**Pokemons's colors */
 const colors = {
     normal: '#A8A77A',
     fire: '#EE8130',
@@ -25,9 +24,9 @@ const colors = {
     fairy: '#D685AD',
 };
 
-//**download API from server */
+//**download API */
 async function loadPokemon() {
-    for (let i = 1; i <= 200; i++) {
+    for (let i = 1; i <= 100; i++) {
         let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         let response = await fetch(url);
         let currentPokemon = await response.json();
@@ -51,9 +50,8 @@ function renderPokemonCards(i) {
     container.innerHTML += `<div id="pokeBox${id}" class="pokeBox" onclick="showPokemonInfo(${id-1})"> 
         <h5>${name}</h5>
         <img src="${image}">
-        <div style="background-color: rgba(255, 255, 255, 0.5); border-radius: 5px"><b>${type}</b></div>
-        <div><b>#${number}</b></div>
-         </div>`;
+        <div style="border-radius: 5px"><b>${type}</b></div>
+        <div><b>#${number}</b></div>`;
 
     document.getElementById('pokeBox' + id).style.backgroundColor = `${color}`;
 }

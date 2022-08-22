@@ -35,7 +35,6 @@ function generateInfoCardHtml(i) {
             </div>
             <h3 class="margin-top-big justify-content-center d-flex">Base Stats</h3>
 
-
             <div class="d-flex flex-column align-items-center">
                 <div class="d-flex">
                     <div class="stat">HP</div>
@@ -61,7 +60,6 @@ function generateInfoCardHtml(i) {
                     <div class="stat">Speed</div>
                     <div class="mt-auto font-20">${stat6}</div>
                 </div>
-
             </div>
         </div>
     </div>
