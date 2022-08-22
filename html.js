@@ -40,44 +40,26 @@ function generateInfoCardHtml(i) {
                 <div class="d-flex">
                     <div class="stat">HP</div>
                     <div class="mt-auto font-20">${stat1}</div>
-                    <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" aria-label="Success example" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
                 </div>
                 <div class="d-flex">
                     <div class="stat">Attack</div>
                     <div class="mt-auto font-20">${stat2}</div>
-                    <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" aria-label="Success example" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
                 </div>
                 <div class="d-flex">
                     <div class="stat">Defense</div>
                     <div class="mt-auto font-20">${stat3}</div>
-                    <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" aria-label="Success example" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
                 </div>
                 <div class="d-flex">
                     <div class="stat">Special Attack</div>
                     <div class="mt-auto font-20">${stat4}</div>
-                    <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" aria-label="Success example" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
                 </div>
                 <div class="d-flex">
                     <div class="stat">Special Defense</div>
                     <div class="mt-auto font-20">${stat5}</div>
-                    <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" aria-label="Success example" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
                 </div>
                 <div class="d-flex">
                     <div class="stat">Speed</div>
                     <div class="mt-auto font-20">${stat6}</div>
-                    <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" aria-label="Success example" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
                 </div>
 
             </div>

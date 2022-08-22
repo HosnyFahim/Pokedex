@@ -16,8 +16,8 @@ body {
 
 .header {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     padding: 40px;
     background-color: black;
     color: tomato;
@@ -39,10 +39,6 @@ body {
 .logo-header img {
     width: 60px;
     margin-left: 8px;
-}
-
-.searchBar {
-    display: flex;
 }
 
 .btn {
@@ -111,7 +107,7 @@ body {
 }
 
 .info-container {
-    background-color: black;
+    background-color: #171717;
     border-radius: 40px;
     margin-top: -100px;
     min-height: 100px;
@@ -134,7 +130,7 @@ body {
 }
 
 .margin-top-big {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .stat {
@@ -146,14 +142,14 @@ body {
 }
 
 #allPokemon {
-    margin-top: 15%;
+    margin-top: 12%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .pokeBox {
-    width: 200px;
+    width: 240px;
     height: 300px;
     display: flex;
     align-items: center;
@@ -170,5 +166,5 @@ body {
 }
 
 .pokeBox img {
-    width: 100px;
+    width: 120px;
 }
