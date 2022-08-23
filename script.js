@@ -26,7 +26,7 @@ const colors = {
 
 //**download API */
 async function loadPokemon() {
-    for (let i = 1; i <= 100; i++) {
+    for (let i = 1; i <= 20; i++) {
         let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         let response = await fetch(url);
         let currentPokemon = await response.json();

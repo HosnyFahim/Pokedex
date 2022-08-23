@@ -58,11 +58,15 @@
     #allPokemon {
         margin-top: 27%;
     }
+    .stat {
+        margin-top: 15px;
+    }
 }
 
 @media (max-width: 525px) {
     .card-style {
-        width: 400px;
+        width: 470px;
+        top: 0 !important;
     }
     .margin-top-big {
         margin-top: 20px;
@@ -76,11 +80,15 @@
     .logo-header {
         margin-bottom: 0px !important;
     }
+    .infoCardImage {
+        margin-top: -180px;
+        max-width: 200px;
+    }
 }
 
 @media (max-width: 470px) {
     .card-style {
-        width: 360px;
+        width: 400px;
     }
     .logo-header img {
         display: none;
@@ -88,12 +96,18 @@
 }
 
 @media (max-width: 420px) {
+    .card-style {
+        width: 390px;
+    }
     .searchBar {
         margin-left: 10px;
     }
 }
 
 @media (max-width: 390px) {
+    .card-style {
+        width: 370px;
+    }
     #allPokemon {
         margin-top: 30%;
     }
@@ -101,13 +115,16 @@
 
 @media (max-width: 374px) {
     .card-style {
-        width: 300px;
+        width: 330px;
     }
 }
 
 @media (max-width: 330px) {
     #allPokemon {
         margin-top: 33%;
+    }
+    .card-style {
+        width: 300px;
     }
 }
 
@@ -119,6 +136,11 @@
 
 @media (max-width: 280px) {
     .card-style {
-        width: 270px;
+        width: 280px;
+    }
+    .infoCardImage {
+        margin-top: -135px;
+        max-width: 125px;
+        margin-left: 85px;
     }
 }
