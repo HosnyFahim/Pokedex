@@ -13,7 +13,8 @@ function generateInfoCardHtml(i) {
     const stat5 = pokemon['stats'][4]['base_stat'];
     const stat6 = pokemon['stats'][5]['base_stat'];
 
-    document.getElementById('pokemonInfo').innerHTML = `<div id="pokemonInfoBg" onclick="closePokemonInfo()" class="pokemonInfoBg">
+    document.getElementById('pokemonInfo').innerHTML = `<div class="pokemonInfoTrans" id="pokemonInfoTrans" onclick="closePokemonInfo()"></div>
+    <div id="pokemonInfoBg" class="pokemonInfoBg">
     <div id="pokemonInfo" class="card-style">
         <div id="pokedex" style="background-color: ${color}">
             <div class="d-flex justify-content-between mb-3">
