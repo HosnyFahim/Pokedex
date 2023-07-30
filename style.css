@@ -3,6 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: black !important;
     scroll-behavior: smooth;
+    position: relative;
 }
 
 .font-20 {
@@ -41,11 +42,7 @@ body {
     margin-left: 8px;
 }
 
-.btn {
-    background-color: white !important;
-    color: black !important;
-    width: 60%;
-}
+
 
 .btn-outline-success:hover {
     background-color: red !important;
@@ -180,4 +177,34 @@ body {
     background-color: rgba(0, 0, 0, 0.2);
     z-index: 998;
     filter: opacity(100%);
+}
+
+.btn {
+    position: fixed;
+    right: 10px;
+    bottom: 40px;
+}
+
+#loadingAnimation {
+    display: none;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ccc;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

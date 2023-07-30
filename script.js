@@ -1,5 +1,7 @@
-let currentPokemon;
 let fetchedPokemons = [];
+const totalPokemonCount = 800;
+let currentPokemonIndex = 1;
+let isFetchingData = false;
 
 
 //**Pokemons's colors */
@@ -25,35 +27,35 @@ const colors = {
 };
 
 //**download API */
-async function loadPokemon() {
-    for (let i = 1; i <= 100; i++) {
-        let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-        let response = await fetch(url);
-        let currentPokemon = await response.json();
-        fetchedPokemons.push(currentPokemon);
-        renderPokemonCards(i);
-
-    }
+function showLoadingAnimation() {
+    loadingAnimation.style.display = 'block';
 }
 
-function renderPokemonCards(i) {
-    const pokemon = i - 1;
-    const name = fetchedPokemons[pokemon]['name'].charAt(0).toUpperCase() + fetchedPokemons[pokemon]['name'].slice(1);
-    const image = fetchedPokemons[pokemon]['sprites']['other']['dream_world']['front_default'];
-    const number = fetchedPokemons[pokemon]['id'].toString().padStart(3, '0');
-    const id = fetchedPokemons[pokemon]['id'].toString();
-    const type = fetchedPokemons[pokemon]['types'][0]['type']['name'].charAt(0).toUpperCase() + fetchedPokemons[pokemon]['types'][0]['type']['name'].slice(1);
-    const color = colors[type.toLowerCase()];
+function hideLoadingAnimation() {
+    loadingAnimation.style.display = 'none';
+}
 
-    let container = document.getElementById('allPokemon');
+async function loadPokemons() {
+    if (isFetchingData) {
+        return; // Wenn bereits eine Anfrage läuft, wird die Funktion beendet
+    }
 
-    container.innerHTML += `<div id="pokeBox${id}" class="pokeBox" onclick="showPokemonInfo(${id-1})"> 
-        <h5>${name}</h5>
-        <img src="${image}">
-        <div style="border-radius: 5px"><b>${type}</b></div>
-        <div><b>#${number}</b></div>`;
+    showLoadingAnimation();
+    isFetchingData = true; // Die Variable wird auf true gesetzt, um anzuzeigen, dass eine Anfrage läuft
 
-    document.getElementById('pokeBox' + id).style.backgroundColor = `${color}`;
+    for (let i = 0; i < 20; i++) {
+        if (currentPokemonIndex <= totalPokemonCount) {
+            let url = `https://pokeapi.co/api/v2/pokemon/${currentPokemonIndex}`;
+            let response = await fetch(url);
+            let currentPokemon = await response.json();
+            fetchedPokemons.push(currentPokemon);
+            renderPokemonCards(currentPokemonIndex);
+            currentPokemonIndex++;
+        }
+    }
+
+    hideLoadingAnimation();
+    isFetchingData = false; // Die Variable wird auf false gesetzt, da die Anfrage abgeschlossen ist
 }
 
 //**search Pokemons */
@@ -67,6 +69,28 @@ function searchPokemon() {
             renderPokemonCards(i + 1);
         }
     }
+}
+
+function renderPokemonCards(pokemonIndex) {
+    // Code zum Rendern der Pokémon-Karten hier einfügen
+    // Hier ist Ihr vorhandener Code, der die Pokémon-Karten rendert, angepasst für den übergebenen Index
+    const pokemon = pokemonIndex - 1;
+    const name = fetchedPokemons[pokemon]['name'].charAt(0).toUpperCase() + fetchedPokemons[pokemon]['name'].slice(1);
+    const image = fetchedPokemons[pokemon]['sprites']['other']['dream_world']['front_default'];
+    const number = fetchedPokemons[pokemon]['id'].toString().padStart(3, '0');
+    const id = fetchedPokemons[pokemon]['id'].toString();
+    const type = fetchedPokemons[pokemon]['types'][0]['type']['name'].charAt(0).toUpperCase() + fetchedPokemons[pokemon]['types'][0]['type']['name'].slice(1);
+    const color = colors[type.toLowerCase()];
+
+    let container = document.getElementById('allPokemon');
+
+    container.innerHTML += `<div id="pokeBox${id}" class="pokeBox" onclick="showPokemonInfo(${id - 1})"> 
+        <h5>${name}</h5>
+        <img src="${image}">
+        <div style="border-radius: 5px"><b>${type}</b></div>
+        <div><b>#${number}</b></div>`;
+
+    document.getElementById('pokeBox' + id).style.backgroundColor = `${color}`;
 }
 
 //**show selected Pokemon in seperate div*/
